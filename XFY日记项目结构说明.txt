@@ -1,0 +1,43 @@
+﻿XFY 日记项目结构说明（简明版）
+
+1) main.py
+- 项目主文件，包含整个桌面应用的核心逻辑：
+  - 界面布局与交互（概览页、日记页、弹窗、主题切换）
+  - 数据库访问（SQLite 的增删改查）
+  - 附件管理（添加、删除、打开、路径处理）
+  - 启动入口 main()（初始化应用并显示主窗口）
+
+2) requirements.txt
+- 运行依赖清单。
+- 主要依赖：PyQt5、PyQt-Fluent-Widgets。
+
+3) diary.db
+- 本地 SQLite 数据库文件。
+- 存储日记正文、标题、日期、附件关联、应用元数据等。
+
+4) attachments/
+- 附件存储目录（运行时使用）。
+- 保存用户添加到日记中的图片、文档等文件副本。
+
+5) icons/ 与 logo_done.png / logo_done.ico
+- 图标与界面资源文件。
+- 用于窗口图标、样式中的小图标（如下拉箭头）等。
+
+6) XFYDiary.spec
+- PyInstaller 打包配置。
+- 定义如何把 main.py 打包为可分发的 EXE（包含资源与依赖）。
+
+7) installer/XFYDiaryInstaller.nsi
+- NSIS 安装包脚本。
+- 把 dist 产物打成安装程序，配置安装路径、快捷方式、卸载信息。
+
+8) dist/、build/、release/
+- build/：打包中间产物。
+- dist/：PyInstaller 输出的可运行程序目录。
+- release/：最终安装包输出目录。
+
+9) AGENTS.md
+- 仓库协作与开发规则说明（结构、命令、风格、测试建议等）。
+
+一句话总结
+- 这是一个“纯本地存储”的 PyQt 日记应用：main.py 负责功能与界面，diary.db + attachments 负责数据，spec + nsi 负责发布。
