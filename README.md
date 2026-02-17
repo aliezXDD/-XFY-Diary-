@@ -4,6 +4,7 @@
 
 ## 软件直链下载
 
+- 可在dist文件夹中直接获取安装包
 - 百度网盘（含提取码）：https://pan.baidu.com/s/1WaNjSq1on2bR9OdKdI2DHg?pwd=si9w
 
 ## 创作者
